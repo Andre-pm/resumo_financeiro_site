@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Política de Privacidade — Resumo Financeiro / Privacy Policy</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a class="brand" href="index.html">
+        <picture>
+          <source srcset="assets/app_icon_dark.png" media="(prefers-color-scheme: dark)">
+          <img class="brand-logo" src="assets/app_icon.png" alt="Logo Resumo Financeiro">
+        </picture>
+        <span>Resumo Financeiro</span>
+      </a>
+      <nav>
+        <a href="privacy.html">Privacidade</a>
+        <a href="terms.html">Termos de Uso</a>
+      </nav>
+    </header>
+
+    <main class="card">
+      <h1>Política de Privacidade / Privacy Policy</h1>
+      <div class="lang-switch">
+        <a href="#pt-br">Português (PT-BR)</a>
+        <a href="#en">English (EN)</a>
+      </div>
+
+      <section id="pt-br">
+        <h2>Português (PT-BR)</h2>
+        <p class="muted"><strong>Última atualização:</strong> 13 de novembro de 2026</p>
+        <p>Esta Política de Privacidade descreve como o aplicativo <strong>Resumo Financeiro</strong> ("Aplicativo"), desenvolvido e mantido por <strong>André Pereira Martins</strong> ("Desenvolvedor", "Controlador", "nós" ou "nosso"), lida com as suas informações.</p>
+        <p>O <strong>Resumo Financeiro</strong> foi projetado desde o princípio com foco em <strong>privacidade e funcionamento offline (<em>Privacy by Design</em>)</strong>. Em resumo: <strong>nós não coletamos, não acessamos, não armazenamos em servidores próprios e não vendemos os seus dados financeiros ou pessoais.</strong></p>
+        <p>Esta Política foi elaborada em conformidade com a Lei Geral de Proteção de Dados Pessoais brasileira (<strong>LGPD — Lei nº 13.709/2018</strong>), o Marco Civil da Internet (<strong>Lei nº 12.965/2014</strong>) e as diretrizes de privacidade da Apple App Store e Google Play Store.</p>
+
+        <h3>1. Identificação do Controlador</h3>
+        <ul>
+          <li><strong>Responsável / Controlador:</strong> André Pereira Martins (Pessoa Física)</li>
+          <li><strong>E-mail de contato para assuntos de privacidade:</strong> <a href="mailto:andre.pereira.martins100@gmail.com">andre.pereira.martins100@gmail.com</a></li>
+        </ul>
+
+        <h3>2. Dados Inseridos no Aplicativo (Armazenamento 100% Local)</h3>
+        <p>Para oferecer suas funcionalidades de controle financeiro, o Aplicativo permite que você insira as seguintes informações:</p>
+        <ol>
+          <li><strong>Nome ou Apelido de Perfil:</strong> Utilizado apenas para personalizar a saudação dentro do Aplicativo e identificar relatórios em PDF gerados por você;</li>
+          <li><strong>Registros Financeiros:</strong> Descrições, valores, datas de vencimento, status de pagamento, categorias, recorrências e limites de orçamento (geral e por categoria);</li>
+          <li><strong>Preferências do Usuário:</strong> Idioma selecionado (Português ou Inglês), tema visual (Claro, Escuro ou Automático) e configurações de lembretes de vencimento (horário e dias de antecedência).</li>
+        </ol>
+        <p><strong>Onde esses dados ficam salvos?</strong> Todas essas informações são armazenadas <strong>exclusivamente no banco de dados local (<code>sqflite</code> / <code>financeiro.db</code>) na memória interna do seu próprio dispositivo móvel</strong>. O Aplicativo não exige criação de conta online, não solicita e-mail, CPF, telefone ou senhas bancárias, e <strong>jamais transmite seus lançamentos financeiros para servidores do Desenvolvedor ou de terceiros</strong>.</p>
+
+        <h3>3. Exportação de Relatórios (PDF) e Backups Criptografados (<code>.bkp</code>)</h3>
+        <p>O Aplicativo oferece ferramentas locais para que você possa exportar seus dados:</p>
+        <ul>
+          <li><strong>Relatórios em PDF:</strong> Gerados localmente no seu aparelho por meio dos pacotes <code>pdf</code> e <code>printing</code>.</li>
+          <li><strong>Arquivos de Backup (<code>.bkp</code>):</strong> Cópias do banco de dados local geradas e restauradas via <code>file_picker</code> e <code>share_plus</code>. Ao exportar, você pode escolher entre:
+            <ul>
+              <li><strong>Com criptografia e biometria:</strong> Os dados são criptografados localmente com <strong>AES-256-GCM</strong> usando uma chave derivada da sua <strong>Senha de Backup</strong> via <strong>PBKDF2-HMAC-SHA256</strong> (pacote <code>cryptography</code>). A chave derivada pode ser armazenada apenas no cofre seguro do próprio aparelho (Keychain no iOS / Keystore no Android via <code>flutter_secure_storage</code>), protegida por biometria (Face ID / Touch ID / impressão digital) para restauração rápida.</li>
+              <li><strong>Sem proteção:</strong> Exporta o arquivo <code>.bkp</code> sem criptografia, por escolha explícita do Usuário.</li>
+            </ul>
+          </li>
+        </ul>
+        <p><strong>Biometria e Senha de Backup:</strong> O Aplicativo <strong>não coleta, não lê e não armazena dados biométricos</strong>; toda verificação de Face ID ou impressão digital é executada exclusivamente pelo sistema operacional. A Senha de Backup não é enviada a nenhum servidor e não pode ser recuperada pelo Desenvolvedor caso seja perdida.</p>
+        <p>O compartilhamento, envio ou salvamento desses arquivos (para Google Drive, iCloud, e-mail ou pasta local) ocorre <strong>exclusivamente por iniciativa e ação direta do Usuário</strong>.</p>
+
+        <h3>4. Serviços de Terceiros e Processamento de Assinaturas</h3>
+        <p>Embora seus dados financeiros permaneçam 100% offline no dispositivo, o Aplicativo utiliza serviços técnicos estritamente necessários para gerenciamento de compras no aplicativo (<em>In-App Purchases</em>), tipografia e exibição de páginas legais:</p>
+        <h4>4.1. Apple App Store, Google Play Store e RevenueCat (Assinaturas PRO)</h4>
+        <p>Para verificar, processar, validar períodos de teste gratuito (<em>trial</em>) e restaurar compras do <strong>Plano PRO</strong> (assinatura mensal, anual ou compra vitalícia), o Aplicativo utiliza o SDK do <strong>RevenueCat</strong> (<code>purchases_flutter</code> / <code>purchases_ui_flutter</code>), integrado ao sistema de faturamento nativo da <strong>Apple App Store</strong> (StoreKit) e da <strong>Google Play Store</strong> (Google Play Billing).</p>
+        <ul>
+          <li><strong>Quais dados são tratados pelo RevenueCat:</strong> Identificador anônimo do usuário no aplicativo (<em>App User ID</em> gerado aleatoriamente), histórico de recibos de compra do aplicativo, status da assinatura (<code>resumo_financeiro_pro</code>), elegibilidade a testes gratuitos, país/idioma da loja e dados técnicos básicos do dispositivo (sistema operacional e versão do app) necessários para validar a licença PRO e prevenir fraudes.</li>
+          <li><strong>Dados de pagamento:</strong> O Desenvolvedor e o RevenueCat <strong>não têm acesso</strong> aos dados do seu cartão de crédito, conta bancária ou credenciais de pagamento, os quais são processados exclusivamente pela Apple ou pelo Google.</li>
+          <li><a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">Política de Privacidade do RevenueCat</a></li>
+          <li><a href="https://www.apple.com/br/legal/privacy/" target="_blank" rel="noopener">Política de Privacidade da Apple</a></li>
+          <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de Privacidade do Google</a></li>
+        </ul>
+        <h4>4.2. Google Fonts e Páginas Legais (WebView)</h4>
+        <p>O Aplicativo utiliza o pacote <code>google_fonts</code> para exibir a tipografia da interface e <code>webview_flutter</code> para abrir estes Termos de Uso e Política de Privacidade dentro do app, o que envolve requisições HTTPS padrão (como endereço IP do dispositivo) apenas para entregar esses recursos estáticos.</p>
+
+        <h3>5. Permissões do Dispositivo Utilizadas pelo Aplicativo</h3>
+        <ul>
+          <li><strong>Notificações e Alarmes Exatos (<code>POST_NOTIFICATIONS</code>, <code>SCHEDULE_EXACT_ALARM</code>, <code>USE_EXACT_ALARM</code>, <code>RECEIVE_BOOT_COMPLETED</code>, <code>VIBRATE</code>):</strong> Utilizadas exclusivamente para agendar e exibir lembretes locais de contas a vencer nos dias e horários configurados por você, bem como reagendá-los caso o aparelho seja reiniciado.</li>
+          <li><strong>Biometria / Face ID (<code>NSFaceIDUsageDescription</code>):</strong> Utilizada exclusivamente para proteger e desbloquear a chave criptográfica de backup salva no cofre seguro do dispositivo.</li>
+          <li><strong>Acesso à Internet (<code>INTERNET</code>):</strong> Utilizado para validar compras/assinaturas do Plano PRO junto às lojas/RevenueCat, baixar fontes tipográficas e abrir as páginas legais.</li>
+          <li><strong>Seleção e Compartilhamento de Arquivos:</strong> O acesso a arquivos ocorre somente sob demanda por meio do seletor nativo do sistema operacional quando você escolhe importar um arquivo <code>.bkp</code> ou compartilhar um relatório PDF/backup. O Aplicativo não vasculha nem lê outros arquivos do seu dispositivo.</li>
+        </ul>
+
+        <h3>6. Retenção e Exclusão de Dados</h3>
+        <ol>
+          <li><strong>Dados Locais:</strong> Seus dados financeiros e seu nome de perfil permanecem armazenados no seu aparelho apenas enquanto você mantiver o Aplicativo instalado e ativo.</li>
+          <li><strong>Como excluir todos os seus dados:</strong> Você pode apagar instantânea e permanentemente todos os seus dados locais acessando a aba <strong>Ajustes</strong> e tocando em <strong>"Sair e Excluir"</strong> (que remove definitivamente o arquivo <code>financeiro.db</code> após gerar uma cópia local de recuperação na pasta do app) ou desinstalando o Aplicativo.</li>
+          <li><strong>Registros de Compra:</strong> Os registros técnicos de transações financeiras de assinatura junto à Apple, Google e RevenueCat são mantidos por esses provedores pelo período exigido pela legislação aplicável.</li>
+        </ol>
+
+        <h3>7. Direitos do Titular dos Dados (LGPD)</h3>
+        <p>Nos termos do Art. 18 da LGPD, você exerce acesso, correção, portabilidade e eliminação diretamente no Aplicativo (editando lançamentos, exportando PDF/<code>.bkp</code> ou usando <em>"Sair e Excluir"</em>). Para dúvidas sobre identificadores anônimos do RevenueCat, entre em contato por e-mail.</p>
+
+        <h3>8. Segurança das Informações</h3>
+        <p>Os dados ficam armazenados no diretório privado (<em>sandbox</em>) do sistema operacional, e backups podem ser protegidos com criptografia AES-256-GCM e chave biométrica no Keychain/Keystore. Recomendamos manter o aparelho protegido por senha, PIN ou biometria e guardar sua Senha de Backup em local seguro.</p>
+
+        <h3>9. Privacidade de Crianças e Adolescentes</h3>
+        <p>O Aplicativo não é direcionado a crianças menores de 13 anos e não coleta intencionalmente dados pessoais de crianças.</p>
+
+        <h3>10. Alterações nesta Política de Privacidade</h3>
+        <p>Esta Política pode ser atualizada periodicamente, com revisão da data de "Última atualização" no topo do documento.</p>
+
+        <h3>11. Contato</h3>
+        <ul>
+          <li><strong>Responsável:</strong> André Pereira Martins</li>
+          <li><strong>E-mail:</strong> <a href="mailto:andre.pereira.martins100@gmail.com">andre.pereira.martins100@gmail.com</a></li>
+        </ul>
+      </section>
+
+      <section id="en">
+        <h2>English (EN)</h2>
+        <p class="muted"><strong>Last updated:</strong> November 13, 2026</p>
+        <p>This Privacy Policy describes how the <strong>Financial Summary</strong> (<em>Resumo Financeiro</em>, the "App") mobile application, developed and maintained by <strong>André Pereira Martins</strong> ("Developer", "Data Controller", "we", "us", or "our"), handles your information.</p>
+        <p><strong>Financial Summary</strong> was built from the ground up with <strong>Privacy by Design and offline-first operation</strong>. In short: <strong>we do not collect, access, store on our own servers, or sell your personal or financial data.</strong></p>
+        <p>This Policy is designed to comply with the Brazilian General Data Protection Law (<strong>LGPD — Law No. 13,709/2018</strong>), international privacy principles (such as GDPR where applicable), and the privacy requirements of the Apple App Store and Google Play Store.</p>
+
+        <h3>1. Data Controller Information</h3>
+        <ul>
+          <li><strong>Developer / Data Controller:</strong> André Pereira Martins</li>
+          <li><strong>Privacy Contact Email:</strong> <a href="mailto:andre.pereira.martins100@gmail.com">andre.pereira.martins100@gmail.com</a></li>
+        </ul>
+
+        <h3>2. Data Entered into the App (100% Local Storage)</h3>
+        <ol>
+          <li><strong>Profile Name or Nickname:</strong> Used solely to personalize the greeting inside the App and label PDF reports generated by you;</li>
+          <li><strong>Financial Records:</strong> Descriptions, amounts, due dates, payment status, categories, recurrence rules, and budget limits;</li>
+          <li><strong>User Preferences:</strong> Selected language (Portuguese or English), visual theme (Light, Dark, or System), and due-date notification settings.</li>
+        </ol>
+        <p>All of this information is stored <strong>exclusively in a local SQLite database (<code>sqflite</code> / <code>financeiro.db</code>) within your mobile device's private internal storage</strong>. The App does not require an online account and <strong>never transmits your financial transactions to any servers owned by the Developer or third parties</strong>.</p>
+
+        <h3>3. Exporting PDF Reports and Encrypted Backups (<code>.bkp</code>)</h3>
+        <ul>
+          <li><strong>PDF Reports:</strong> Generated locally on your device via <code>pdf</code> and <code>printing</code>.</li>
+          <li><strong>Backup Files (<code>.bkp</code>):</strong> Exported and restored via <code>file_picker</code> and <code>share_plus</code>. When exporting, you may choose:
+            <ul>
+              <li><strong>With encryption &amp; biometrics:</strong> Encrypted locally using <strong>AES-256-GCM</strong> with a key derived from your <strong>Backup Password</strong> via <strong>PBKDF2-HMAC-SHA256</strong> (<code>cryptography</code>). The derived key can be stored only in your device's secure vault (iOS Keychain / Android Keystore via <code>flutter_secure_storage</code>) protected by biometrics (Face ID / Touch ID / fingerprint) for quick restore.</li>
+              <li><strong>Without protection:</strong> Exports the <code>.bkp</code> file unencrypted, at your explicit choice.</li>
+            </ul>
+          </li>
+        </ul>
+        <p><strong>Biometrics &amp; Backup Password:</strong> The App <strong>does not collect, read, or store biometric data</strong>; all Face ID or fingerprint verification is handled solely by the operating system. Your Backup Password is never sent to any server and cannot be recovered by the Developer if lost.</p>
+
+        <h3>4. Third-Party Services and Subscription Processing</h3>
+        <h4>4.1. Apple App Store, Google Play Store, and RevenueCat (PRO Subscriptions)</h4>
+        <p>To process, validate, check free trial eligibility, and restore purchases of the <strong>PRO Plan</strong>, the App integrates the <strong>RevenueCat</strong> SDK (<code>purchases_flutter</code> / <code>purchases_ui_flutter</code>) alongside <strong>Apple App Store</strong> (StoreKit) and <strong>Google Play Store</strong> (Google Play Billing). Neither the Developer nor RevenueCat has access to your credit card numbers or billing credentials.</p>
+        <ul>
+          <li><a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat Privacy Policy</a></li>
+          <li><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple Privacy Policy</a></li>
+          <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></li>
+        </ul>
+        <h4>4.2. Google Fonts and Legal Pages (WebView)</h4>
+        <p>The App uses <code>google_fonts</code> for typography and <code>webview_flutter</code> to display these legal pages in-app, involving standard HTTPS requests only to deliver those static assets.</p>
+
+        <h3>5. Device Permissions Used by the App</h3>
+        <ul>
+          <li><strong>Notifications and Exact Alarms:</strong> Used exclusively to schedule and display local reminders for unpaid bills.</li>
+          <li><strong>Biometrics / Face ID (<code>NSFaceIDUsageDescription</code>):</strong> Used exclusively to protect and unlock the local backup encryption key in your device's Keychain/Keystore.</li>
+          <li><strong>Internet Access:</strong> Used to verify PRO Plan purchases with the app stores/RevenueCat, download typography assets, and load legal pages.</li>
+          <li><strong>File Selection and Sharing:</strong> File access occurs only on demand via the operating system's native picker/share sheet.</li>
+        </ul>
+
+        <h3>6. Data Retention and Deletion</h3>
+        <p>You can permanently erase all local data at any time via <strong>Settings &gt; Log Out and Delete</strong> (<code>financeiro.db</code>, after saving a local recovery copy in the app folder) or by uninstalling the App.</p>
+
+        <h3>7. Your Data Protection Rights</h3>
+        <p>Under LGPD and GDPR (where applicable), you exercise access, correction, portability, and deletion directly within the App. For inquiries regarding anonymous RevenueCat identifiers, contact us by email.</p>
+
+        <h3>8. Data Security</h3>
+        <p>Your App data is stored inside the application's private sandbox directory, and backups can be protected with AES-256-GCM encryption and biometric key storage. Keep your device protected with a passcode or biometric lock and store your Backup Password safely.</p>
+
+        <h3>9. Children's Privacy</h3>
+        <p>The App is not directed at children under the age of 13 and we do not knowingly collect personal information from children.</p>
+
+        <h3>10. Changes to This Privacy Policy</h3>
+        <p>We may update this Privacy Policy from time to time and revise the "Last updated" date at the top.</p>
+
+        <h3>11. Contact Us</h3>
+        <ul>
+          <li><strong>Developer:</strong> André Pereira Martins</li>
+          <li><strong>Email:</strong> <a href="mailto:andre.pereira.martins100@gmail.com">andre.pereira.martins100@gmail.com</a></li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <p><a href="index.html">← Voltar / Back</a></p>
+    </footer>
+  </div>
+</body>
+</html>
