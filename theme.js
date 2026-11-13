@@ -1,5 +1,6 @@
 (function () {
   var STORAGE_KEY = 'resumo-financeiro-theme';
+  var HIDE_TOGGLE_SESSION_KEY = 'resumo-financeiro-hide-theme-toggle';
 
   var SUN_ICON =
     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
@@ -68,9 +69,28 @@
     updateToggleButton(theme);
   }
 
+  function shouldHideThemeToggle(queryTheme) {
+    if (queryTheme) {
+      try {
+        sessionStorage.setItem(HIDE_TOGGLE_SESSION_KEY, 'true');
+      } catch (e) {
+        // Ignore storage errors in restricted contexts
+      }
+      return true;
+    }
+    try {
+      return sessionStorage.getItem(HIDE_TOGGLE_SESSION_KEY) === 'true';
+    } catch (e) {
+      return false;
+    }
+  }
+
   var queryTheme = getQueryTheme();
   if (queryTheme) {
     saveTheme(queryTheme);
+  }
+  if (shouldHideThemeToggle(queryTheme)) {
+    document.documentElement.setAttribute('data-hide-theme-toggle', 'true');
   }
   var initialTheme = queryTheme || getStoredTheme();
   document.documentElement.setAttribute('data-theme', initialTheme);

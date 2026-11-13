@@ -116,6 +116,10 @@ header {
   flex-shrink: 0;
 }
 
+:root[data-hide-theme-toggle="true"] .theme-toggle {
+  display: none;
+}
+
 nav {
   display: flex;
   gap: 1rem;
