@@ -12,6 +12,19 @@
     '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>' +
     '</svg>';
 
+  function getQueryTheme() {
+    try {
+      var params = new URLSearchParams(window.location.search);
+      var theme = params.get('theme');
+      if (theme === 'dark' || theme === 'light') {
+        return theme;
+      }
+    } catch (e) {
+      // Ignore URL parsing errors
+    }
+    return null;
+  }
+
   function getStoredTheme() {
     try {
       return localStorage.getItem(STORAGE_KEY) === 'dark' ? 'dark' : 'light';
@@ -55,11 +68,15 @@
     updateToggleButton(theme);
   }
 
-  var initialTheme = getStoredTheme();
+  var queryTheme = getQueryTheme();
+  if (queryTheme) {
+    saveTheme(queryTheme);
+  }
+  var initialTheme = queryTheme || getStoredTheme();
   document.documentElement.setAttribute('data-theme', initialTheme);
 
   document.addEventListener('DOMContentLoaded', function () {
-    applyTheme(getStoredTheme());
+    applyTheme(initialTheme);
 
     var btn = document.getElementById('theme-toggle');
     if (btn) {
