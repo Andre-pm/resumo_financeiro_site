@@ -5,21 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Política de Privacidade — Resumo Financeiro / Privacy Policy</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="theme.js"></script>
 </head>
 <body>
   <div class="container">
     <header>
       <a class="brand" href="index.html">
-        <picture>
-          <source srcset="assets/app_icon_dark.png" media="(prefers-color-scheme: dark)">
-          <img class="brand-logo" src="assets/app_icon.png" alt="Logo Resumo Financeiro">
-        </picture>
+        <img class="brand-logo" src="assets/app_icon.png" data-light-src="assets/app_icon.png" data-dark-src="assets/app_icon_dark.png" alt="Logo Resumo Financeiro">
         <span>Resumo Financeiro</span>
       </a>
-      <nav>
-        <a href="privacy.html">Privacidade</a>
-        <a href="terms.html">Termos de Uso</a>
-      </nav>
+      <div class="header-actions">
+        <nav>
+          <a href="privacy.html">Privacidade</a>
+          <a href="terms.html">Termos de Uso</a>
+        </nav>
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Mudar para tema escuro"></button>
+      </div>
     </header>
 
     <main class="card">
